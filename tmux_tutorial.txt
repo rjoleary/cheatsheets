@@ -1,0 +1,23 @@
+tmux
+CTRL-b + <COMMAND> : run <COMMAND>
+
+c : create window
+w : list windows
+, : rename window
+p : previous
+n : next
+% : splits vertically
+" : slits horizontally
+? : list all keybindings
+
+panes are inside windows
+
+CTRL-b + arrow : switch panes
+CTRL-b + hold arrow key : resize pane
+
+
+sessions
+
+tmux new -s <SESSION>
+tmux list-sessions
+tmux attach -t <SESSION>

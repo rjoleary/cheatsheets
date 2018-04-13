@@ -1,0 +1,61 @@
+\documentclass[twocolumn]{article}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage[landscape,margin=2cm]{geometry}
+\usepackage{siunitx}
+\setlength{\columnsep}{2cm}
+\begin{document}
+
+% This cheatsheet escapes the goal.
+% You should not be thinking about vim while using vim.
+
+% Page 1: generic vim commands
+% Page 2: Ryan's custom vim commands
+% Page 3: vim script
+
+:version   : list enabled (+) and disabled (-) features
+vim -u NONE -N  : run vim without loading vimrc
+
+\section{Modes}
+normal
+visual
+insert
+
+\section{Navigation}
+Navigate...
+j/k/l/;  : left/up/down/right
+\$  : end of line
+G   : end of file
+gg  : beginning of file
+0   : beginning of line
+\^  : first non-blank on line
+g{motion} : motion acts on the screen line, only significant when wrap on
+{number}|  : column N
+f/F
+t/T
+;   : repeat f/F/t/T [count] times
+
+>/<  : increase/decrease indentation
+i
+a
+x  : delete character
+dd  : delete line
+.  : repeat last change
+
+\section{Compound Commands}
+C = c\$
+s = cl
+S = \^C
+I = \^i
+A = \$a
+o = A<CR>
+O ~ ko
+
+\section{Search}
+:nohl  : hide highlighting
+
+\section{Misc.}
+set (no)wrap
+set ts=8
+
+\end{document}
