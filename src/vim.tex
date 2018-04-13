@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage[landscape,margin=2cm]{geometry}
 \usepackage{siunitx}
+\usepackage{listings}
 \setlength{\columnsep}{2cm}
 \begin{document}
 
@@ -57,5 +58,129 @@ O ~ ko
 \section{Misc.}
 set (no)wrap
 set ts=8
+
+\begin{lstlisting}
+Basics
+h/j/k/l		Cursor movement
+[arrows]	Cursor movement in insert mode
+[Esc]		Return to normal mode
+.		Repeat last command
+:! command	Run command
+>/<		Increase/Decrease indent
+
+Moving
+b/e	To the beginning/end of a word
+B/E	To the beginning/end of a whitespace-delimited word
+0/$	To the beginning/end of a line
+^	To the first non-whitespace character of a line
+H/M/L	To the first/middle/last line of the screen
+:42	Jump to line number 42
+
+Inserting text
+i	Insert before cursor
+I	Insert to the start of the current line
+a	Append after cursor
+A	Append to the end of the current line
+o/O	Open a new line below/above and insert
+C	Change the rest of the current line.
+r	Replace one character
+R	Replace characters in insert mode
+
+Deleting text
+x	Delete characters under the cursor.
+X	Delete characters before the cursor.
+dd	Delete the current line.
+
+The following works with selections (visual mode), words (w) and letters (l)
+~ 	Change the case
+c	Change
+y	Yank
+d	Delete
+
+Editing
+yy	Yank the current line
+dd	Delete the current line
+p 	Put characters/lines after cursor/line
+P 	Put characters/lines before cursor/line
+J	Merge the current line with the next line
+
+Undo
+u	Undo the last action
+U	Undo changes to line
+[Ctrl]r	Redo
+
+Files
+:e filename	Open a file
+:w [filename]	Write the file (optionally with a new name)
+:q	Quit
+:q!	Quit without saving changes.
+:wq	Write and quit
+:x	Write and quit (writing only happens when changes have been made)
+
+Windows
+-------
+CTRL-w
+	switch windows (press twice)
+:q
+	close window
+
+Run Commands
+------------
+:!ls
+	run command ls
+:r file
+	retrieves file contents
+:r !ls
+	retrieves output of ls command
+
+Search
+------
+/x
+	search x
+n
+	next
+N
+	previous
+CTRL-o
+	go back
+CTRL-I
+	forward
+
+Help
+----
+:help
+	open help
+CTRL-]
+	jump to tag
+CTRL-T
+	returns
+vimtutor
+	tutorial
+
+Exit
+----
+:q
+	quit if documents are saved
+:q!
+	without asking for save
+
+Cursor
+------
+CTRL-G
+	get cursor info
+G
+	bottom of file
+gg
+	top of file
+Gx
+	move to line x
+Use the following to display the filetype:
+:set ft?
+
+Use the following to change the tabs to the file's default format:
+:retab
+
+]p pastes with current indentation
+\end{lstlisting}
 
 \end{document}

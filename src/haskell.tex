@@ -1,3 +1,13 @@
+\documentclass[twocolumn]{article}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage[landscape,margin=2cm]{geometry}
+\usepackage{siunitx}
+\usepackage{listings}
+\setlength{\columnsep}{2cm}
+\begin{document}
+
+\begin{lstlisting}
 Functor
 
 class Functor f where
@@ -44,7 +54,7 @@ class Monad m where
 	(>>) :: ma -> m b -> m b
 	return :: a -> m a
 (<=<) :: (Monad m) => (b -> m c) -> (a -> m b) -> (a -> m c)
-f <=< g = (\x -> g x >>= f)  
+f <=< g = (\x -> g x >>= f)
 Left identity law: return x >>= f = f x
 Right identity law: m >>= return = m
 Associativity law:
@@ -52,3 +62,6 @@ Associativity law:
 (f <=< g) <=< h = f <=< (g <=< h)
 
 MonoidPlus
+\end{lstlisting}
+
+\end{document}

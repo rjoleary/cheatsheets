@@ -1,3 +1,13 @@
+\documentclass[twocolumn]{article}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage[landscape,margin=2cm]{geometry}
+\usepackage{siunitx}
+\usepackage{listings}
+\setlength{\columnsep}{2cm}
+\begin{document}
+
+\begin{lstlisting}
 (abs x)              ; returns the absolute value of x
 (acos x)             ; returns the arccosine of x
 (asin x)             ; returns the arcsine of x
@@ -7,11 +17,11 @@
 (cos x)              ; returns the cosine of x
 (denominator x)      ; returns the denominator of x
 (exp x)              ; returns e^x
-(expt n k)           ; returns n^k		
+(expt n k)           ; returns n^k
 (floor x)            ; rounds x downwards
 (gcd x1 x2 ...)      ; computes the greatest common divisor
 (lcm x1 x2 ...)      ; computes the least common multiple
-(log x)              ; returns the natural logarithm of x 
+(log x)              ; returns the natural logarithm of x
 (max x1 x2 ...)      ; returns the largest of the arguments
 (min x1 x2 ...)      ; returns the smallest of the arguments
 (modulo x1 x2)       ; computes the modulo of the arguments
@@ -25,3 +35,6 @@
 (sqrt x)             ; returns the square root of x
 (tan x)              ; returns the tangent of x
 (truncate x)         ; truncates x
+\end{lstlisting}
+
+\end{document}
