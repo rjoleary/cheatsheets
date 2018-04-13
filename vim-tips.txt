@@ -1,0 +1,6 @@
+Use the following to display the filetype:
+:set ft?
+
+Use the following to change the tabs to the file's default format:
+:retab
+

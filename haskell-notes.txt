@@ -1,0 +1,54 @@
+Functor
+
+class Functor f where
+	fmap :: (a->b) -> f a -> f b
+Law #1: fmap id = id
+Law #2: fmap f . fmap g = fmap (f . g)
+
+
+Applicative Functor
+
+class Functor f => Applicative f where
+	pure :: a -> f a
+	(<*>) :: f (a -> b) -> f a -> f b
+(<$>) :: (a -> b) -> f a -> f b
+Law #1: fmap f x = f <$> x
+Identity law: pure id <*> x = x
+Composition law:
+(.) <$> u <*> v <*> w = u <*> (v <*> w)
+Homomorphism: pure f <*> pure x = pure (f x)
+Interchange: f <$> pure x = ($x) <$> pure f
+
+
+Monoid
+
+class Monoid m where
+	mempty :: m
+	mappend :: m -> m -> m
+	mconcat :: [m] -> m
+Identity law:
+m `mappend` mempty =
+mempty `mappend` m = m
+Associative law:
+(m `mappend` n) `mappend` o =
+m `mappend` (n `mappend` o)
+Concatenation: mconcat = foldr mappend mempty
+
+
+Foldable
+
+Monoid
+
+class Monad m where
+	(>>=) :: m a -> (a -> m b) -> m b
+	(>>) :: ma -> m b -> m b
+	return :: a -> m a
+(<=<) :: (Monad m) => (b -> m c) -> (a -> m b) -> (a -> m c)
+f <=< g = (\x -> g x >>= f)  
+Left identity law: return x >>= f = f x
+Right identity law: m >>= return = m
+Associativity law:
+(m >>= f) >>= g = m >>= (\x -> f x >>= g)
+(f <=< g) <=< h = f <=< (g <=< h)
+
+MonoidPlus

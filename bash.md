@@ -1,0 +1,78 @@
+What does each command do?
+What does each argument do?
+How to install?
+
+    man
+    more
+    less
+    cat
+    touch
+    ls
+    grep
+    awk
+    sed
+    find
+    exit
+    logout
+    /dev/null
+
+## Basic
+
+    #!/bin/bash
+    # Comment
+    echo -n
+    read
+    exit
+    test ! -a -o -n -z = != -eq -ge -gt -le -lt -ne -ef -nt -ot -e -f -h -s -x ()
+    expr | & < <= = != >= > + - * / % : match substr index length + ()
+    if then else fi
+    while do done
+    until do done
+    for in do done
+    case in esac
+    true
+    false
+    trap
+    $# $0 $1 ...
+    $$
+    $?
+
+Difference between '', "", ``, $(), and $(()).
+Syntax suger for test.
+&& and || in if.
+What is there to note about using parenthesis for test?
+What is a faster alternative to the true program?
+
+## Functions
+
+    # Define before use
+    hello()
+    {
+        echo "You are in function hello()"
+    }
+    # call
+    hello
+
+## File management
+
+    mkdir -mpv
+    mv -bfinsuv
+    rm -fiIrdv
+    trash
+    rename -vnf
+    cp
+
+## File permissions
+
+## Piping
+
+    | > <
+    0 input
+    1 output
+    2 error
+
+## Variables
+
+    x=12  # assignment
+    let y=$x+2
+    echo "$x" # access

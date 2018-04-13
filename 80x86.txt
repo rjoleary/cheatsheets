@@ -1,0 +1,82 @@
+80x86 Assembly
+Von Neumann Architecture Machine
+Three main components
+CPU
+memory
+I/O devices
+connected via system bus – consists of address, data and control buses
+Types of registers
+general-purpose registers
+special-purpose application-accessible registers
+special-purpose kernel-mode registers
+segment registers
+rarely used
+Data Organization on 80x86
+nibble (4 bits)
+limits
+unsigned: 0 to 16
+signed: -8 to 7
+used for
+BCD (binary-coded decimal)
+hexadecimal digit
+byte (8 bits)
+limits
+unsigned: 0 to 255
+signed: -128 to 127
+used for ASCII characterss
+smallest addressable size
+word (16 bits)
+limits
+unsigned:
+signed:
+double word (32 bits)
+limits
+unsigned:
+signed:
+quad word (64 bits)
+limits
+unsigned:
+signed:
+long word (128 bits)
+limits
+unsigned:
+signed:
+Signed integers
+One's Complement Numbering System
+sign flag
+not used in 80x86
+Two's Complement Numbering System
+sign bit
+used by 80x86
+makes computations easier
+Method to negate a signed integer
+apply binary not
+add 1 and disregard overflow
+Note: smallest negative number will not change
+80x86 Instructions
+mov a b
+copies register, memory variable or constant from a to register or memory variable b
+a and b must be the same size
+a and b cannot both be memory variables
+sub a b
+subtract (a-b) and puts result in b
+has same restrictions as mov
+add a b
+addition (a+b) and puts result in b
+has same restrictions as mov
+and a b
+binary and (a and b) and puts result in b
+has same restrictions as mov
+or a b
+binary or (a or b) and puts result in b
+has same restrictions as mov
+xor a b
+binary xor (a xor b) and puts result in b
+has same restrictions as mov
+not a
+binary not (not a) and puts result in a
+a must be a register or memory variables
+neg a
+negates a and puts result in a
+has same restriction as not
+makes most sense on integers

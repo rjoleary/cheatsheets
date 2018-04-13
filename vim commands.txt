@@ -1,0 +1,57 @@
+Windows
+-------
+CTRL-w
+	switch windows (press twice)
+:q
+	close window
+
+Run Commands
+------------
+:!ls
+	run command ls
+:r file
+	retrieves file contents
+:r !ls
+	retrieves output of ls command
+
+Search
+------
+/x
+	search x
+n
+	next
+N
+	previous
+CTRL-o
+	go back
+CTRL-I
+	forward
+
+Help
+----
+:help
+	open help
+CTRL-]
+	jump to tag
+CTRL-T
+	returns
+vimtutor
+	tutorial
+
+Exit
+----
+:q
+	quit if documents are saved
+:q!
+	without asking for save
+
+Cursor
+------
+CTRL-G
+	get cursor info
+G
+	bottom of file
+gg
+	top of file
+Gx
+	move to line x

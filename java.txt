@@ -1,0 +1,58 @@
+Java Learning Experience
+Things that still need to be learned:
+packages
+generics
+standardization (ISO?)
+commonly used exceptions and errors
+annotations
+
+Nonfinal methods of Object (common to all classes)
+equals (logical equality): reflexive, symmetric, transitive, consistent, x.equals(null) == false
+hashCode
+contract: x.equals(y) => x.hashcode() == y.hashcode()
+The reverse is not necessarily true.
+Good hash functions produce unequal hash codes for unequal objects.
+toString: diagnostic message containing all the useful information in the class
+clone
+finalize (do not ever use)
+
+Java Singleton Recipe:
+public enum Susan {
+	INSTANCE;
+	private String nickname = "Susan";
+	void setNickname(String nn) {if (nn == null) throw new NullReferenceError; nickname = nn;}
+	String talk() {System.out.println(nickname + " the singleton");}
+}
+...
+Susan.INSTANCE.setNickname("Sussy");
+Susan.INSTANCE.talk(); // How to finalize a singleton?
+
+Java Static Class Recipe:
+public class UtilityClass {
+	// kill the constructor
+	private UtilityClass() {throw new AssertionError();}
+	// static methods
+	public static int randomNumber() {return 4;}
+}
+
+Java equals override recipe:
+@Override public boolean equals(Object o) {
+	if (this == o) // performance optimization
+		return true;
+	if (!(o instanceOf MyType)) // type check + null check
+		return false;
+	MyType mt = o; // cast
+	return field.equals(o.field); // recursion, may require null check, special treatment for Float
+
+Questions
+How do you finalize a singleton? Consider a small program with a Logger singleton. A string is written to the log via Logger.INSTANCE.write("some log message"). The logger holds a file handle. How should the singleton close the log file at the end of the program? Two possible ways I can think of are: override finalize method and expose cleanup method. The book is very adment on never using the finalize method.
+About lack of const. I had the same issue with C#. When a function takes an object as a parameter, there is no guarantee the function won't mutate the object. Coming from a C++ (with the const qualifier) background, this makes me nervous. Usually it's clear from the function's name what it does, but is there any other convention?
+Is there any nice way to generate a hash?
+
+JUnit Assertions (generally the first parameter is an optional message), (comparisons use (expected, actual))
+assertArrayEquals
+assertEquals (uses equals method)
+assert[Not]Same (compares references)
+assert[Not]Null
+assertFalse / assertTrue
+fail

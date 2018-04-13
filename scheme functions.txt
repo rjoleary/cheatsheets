@@ -1,0 +1,27 @@
+(abs x)              ; returns the absolute value of x
+(acos x)             ; returns the arccosine of x
+(asin x)             ; returns the arcsine of x
+(atan x)             ; returns the arctangent of x
+(atan x1 x2)         ; computes (angle (make-rectangular x2 x1))
+(ceiling x)          ; rounds x upwards
+(cos x)              ; returns the cosine of x
+(denominator x)      ; returns the denominator of x
+(exp x)              ; returns e^x
+(expt n k)           ; returns n^k		
+(floor x)            ; rounds x downwards
+(gcd x1 x2 ...)      ; computes the greatest common divisor
+(lcm x1 x2 ...)      ; computes the least common multiple
+(log x)              ; returns the natural logarithm of x 
+(max x1 x2 ...)      ; returns the largest of the arguments
+(min x1 x2 ...)      ; returns the smallest of the arguments
+(modulo x1 x2)       ; computes the modulo of the arguments
+(numerator x)        ; returns the numerator of the argument
+(quotient x1 x2)     ; returns the quotient of the arguments
+(rationalize x1 x2)  ; returns the simplest rational number differing
+                     ; from x1 no more than x2
+(remainder x1 x2)    ; returns the remainder of the arguments
+(round x)            ; rounds the argument (see the example below)
+(sin x)              ; returns the sine of x
+(sqrt x)             ; returns the square root of x
+(tan x)              ; returns the tangent of x
+(truncate x)         ; truncates x
