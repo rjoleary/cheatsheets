@@ -1,9 +1,12 @@
+CHEATSHEETS_TEX := $(wildcard src/*.tex)
+CHEATSHEETS_PDF := $(patsubst %.tex,%.pdf,${CHEATSHEETS_TEX})
+
 .PHONY : build clean
 
-build : src/vim.pdf
+build : ${CHEATSHEETS_PDF}
 
-src/vim.pdf : src/vim.tex
-	-pdflatex src/vim.tex
+src/%.pdf : src/%.tex
+	cd src && pdflatex $(notdir $^)
 
 clean :
-	-rm src/vim.pdf src/vim.log src/vim.aux
+	rm -f src/*.pdf src/*.log src/*.aux
