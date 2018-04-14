@@ -9,4 +9,4 @@ src/%.pdf : src/%.tex
 	cd src && pdflatex $(notdir $^)
 
 clean :
-	rm -f src/*.pdf src/*.log src/*.aux
+	rm -f src/*.pdf src/*.log src/*.aux src/*.out
