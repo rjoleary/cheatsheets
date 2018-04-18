@@ -32,7 +32,7 @@ nasm -O1 ...
 \subsection*{Registers}
 
 \begin{lstlisting}
-eax-edx: general purpose 32-bit
+eax-edx: GPRs 32-bit
 ax-dx: general purpose 16-bit (lower half of e[abcd]x)
 al-dl: general purpose 8-bit (lower half of [abcd]x)
 ah-dh: general purpose 8-bit (higher half of [abcd]x)
@@ -40,6 +40,13 @@ esp: stack pointer (points to top element of stack)
 ebp: base pointer / frame pointer
 esi / edi: source and destination index (we did not need these for our compiler)
 eip: instruction pointer
+\end{lstlisting}
+
+\begin{lstlisting}
+cf (carry flag)
+zf (zero flag)
+sf (sign flag)
+of (overflow flag)
 \end{lstlisting}
 
 % TODO: diagram of registers
